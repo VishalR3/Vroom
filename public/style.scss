@@ -1,0 +1,78 @@
+video::-webkit-media-controls-volume-slider {
+  display: none;
+}
+
+video::-webkit-media-controls-mute-button {
+  display: none;
+}
+body {
+  min-height: 98.8vh;
+  background: linear-gradient(135deg, #141414, #323232);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+.btn-circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.headingText {
+  font-family: "Mochiy Pop P One", sans-serif;
+  color: #c2a0b9;
+}
+#joinBtn {
+  border-radius: 2rem;
+  height: 50px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#video-grid {
+  justify-content: center;
+}
+.usersVideo {
+  border-radius: 6%;
+}
+.streamVideo {
+  width: 100%;
+  border-radius: 1%;
+}
+#streamLayout {
+  display: none;
+}
+.controls-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2.3rem;
+  display: grid;
+  place-items: center;
+  .controls-btns {
+    background-color: #a6beb66b;
+    padding: 0.5rem 0.2rem;
+    border-radius: 4rem;
+  }
+}
+.shortcutsList {
+  list-style-type: none;
+  list-style-position: outside;
+  padding-left: 0;
+}
+.redirect-link {
+  text-decoration: none;
+  color: #35c862;
+  font-weight: bold;
+}
+#instructions {
+  display: none;
+  color: #fefefe;
+  background-color: rgb(29, 28, 28);
+  padding: 2rem;
+  color: #e7e2e2;
+}
+.text-green {
+  color: #35c862;
+}

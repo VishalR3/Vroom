@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    const ROOM_ID = "<%= roomId %>"
+  </script>
+  <!-- CSS only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link href="fa/all.min.css" rel="stylesheet">
+
+  <script defer src="peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="fa/all.min.js"></script>
+  <script src="new.js" defer></script>
+  <title>VC++ </title>
+</head>
+
+<body>
+  <div class="my-2">
+    <h1 class="text-center headingText">VC++</h1>
+  </div>
+  <div class="container-fluid">
+    <div class="px-4 mt-3" id='videosArea'>
+      <div id="instructions">
+        <div class="d-flex align-items-center">
+          <div>
+
+            <h4>Welcome to VC++</h4>
+            <p>Before you can continue, you need to do the <b class="text-green">One-Time Setup</b> as follows:</p>
+            <ol>
+              <li>Paste this link in a new tab: <a class="d-block redirect-link"
+                  href='chrome://flags/#unsafely-treat-insecure-origin-as-secure'
+                  target="_blank">chrome://flags/#unsafely-treat-insecure-origin-as-secure</a></li>
+              <li>Paste
+                <pre class="d-inline px-2 bg-secondary br-2">http://192.168.235.100:3000/</pre> in the first text-box
+                input.
+              </li>
+              <li>Enable this option by choosing 'Enabled' from the dropdown in the right side.</li>
+              <li>Click on the Relaunch button, that appears in the bottom-right corner of the screen.</li>
+            </ol>
+            <p>And that's all you have to do.</p>
+          </div>
+          <div>
+            <img src="instructions.png" class="img-fluid" alt="instructions">
+          </div>
+        </div>
+      </div>
+      <div class="row" id="streamLayout">
+        <div class="col-md-10">
+          <video id='streamVideo' class="streamVideo"></video>
+        </div>
+        <div class="col-md-2" id='usersSpace'>
+        </div>
+      </div>
+      <div class="row" id="video-grid"></div>
+    </div>
+    <div class="preText text-center">
+      <div class="mt-2 text-light">
+        Created by <a class="redirect-link" href="http://vishalrana.in" target="_blank">Vishal Rana</a>
+      </div>
+      <div class="mt-3">
+        <span class="text-light">Invite friends to this room with this link. <b
+            class="d-block">http://192.168.235.110:3000/<%= roomId %></b>
+        </span>
+      </div>
+      <div class="mt-3">
+        <h6 class="text-light">Shortcuts</h6>
+        <ul class="shortcutsList text-secondary">
+          <li>
+            Press M for toggling Mute
+          </li>
+          <li>
+            Press N for toggling Camera
+          </li>
+          <li>If you face any issues, Refresh your page and rejoin for now</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="controls-bar">
+    <div class="controls-btns">
+      <button class="btn btn-light btn-circle mx-2" id='muteBtn'><i class="fas fa-microphone-slash"></i></button>
+      <button class="btn btn-light btn-circle mx-2" id='camBtn'><i class="fas fa-video-slash"></i></button>
+      <button id='shareBtn' class="btn btn-secondary btn-circle mx-2"><i class="fas fa-desktop"></i></button>
+      <button class="btn btn-primary mx-2" id='joinBtn'>Join</button>
+    </div>
+  </div>
+</body>
+
+</html>
